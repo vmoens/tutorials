@@ -35,8 +35,8 @@ By the end of this tutorial, you will be able to preprocess sentences into tenso
 #
 # ::
 #
-#    python -m spacy download en
-#    python -m spacy download de
+#    python -m spacy download en_core_web_sm
+#    python -m spacy download de_core_news_sm
 
 import torchtext
 import torch

@@ -37,8 +37,8 @@ pip install -e git+git://github.com/pytorch/pytorch_sphinx_theme.git#egg=pytorch
 pip install ray[tune] tabulate
 conda install -yq -c pytorch "cudatoolkit=10.1" pytorch torchvision torchtext
 conda install torchaudio -c pytorch-test
-python -m spacy download de
-python -m spacy download en
+python -m spacy download de_core_news_sm
+python -m spacy download en_core_web_sm
 pushd ${PROJECT_DIR}
 DIR=.jenkins
 export NUM_WORKERS=4
