@@ -306,6 +306,20 @@ information on this):
     return {d_old_h, d_input, d_weights, d_bias, d_old_cell};
   }
 
+.. note::
+
+    If you are implementing a custom inplace op, please follow the guidance in section
+    `Special handling for inplace & view ops in dispatcher tutorial <dispatcher.rst>`_
+    to register a dispatched inplace op.
+
+.. note::
+
+    Implementing a custom view op is highly discouraged. We suggest making a clone instead of returning
+    a tensor on the same storage of input tensor.  A view op produces output tensor which is an alias
+    of input tensor. You can find `supported view ops in PyTorch here <https://pytorch.org/docs/stable/tensor_view.html#tensor-views>`_.
+    If you really want to implement a custom view op, see ``torch::autograd::as_view`` usage in the
+    generated ``ADInplaceOrViewTypeEverything.cpp`` for how to set it up correctly to work with our autograd system.
+
 Binding to Python
 ^^^^^^^^^^^^^^^^^
 
