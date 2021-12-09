@@ -154,7 +154,7 @@ send commands. Applications don't need to worry about the lifetime of ``RRefs``.
 The owner of each ``RRef`` maintains a reference counting map to track its
 lifetime, and guarantees the remote data object will not be deleted as long as
 there is any live user of that ``RRef``. Please refer to the ``RRef``
-`design doc <https://pytorch.org/docs/master/notes/rref.html>`__ for details.
+`design doc <https://pytorch.org/docs/stable/rpc.html>`__ for details.
 
 
 .. code:: python
